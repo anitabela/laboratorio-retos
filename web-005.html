@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Web Layout Before</title>
+    <style>
+      /* Reset básico */
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: Arial, sans-serif;
+        background: #f0f0f0;
+        margin: 0;
+        padding: 20px;
+      }
+      .container {
+        max-width: 900px;
+        margin: 0 auto;
+        background: #fff;
+        padding: 25px 30px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.1);
+      }
+      h1.section-heading,
+      h2.section-subheading {
+        font-weight: bold;
+        margin: 20px 0 10px;
+      }
+      h1.section-heading {
+        font-size: 1.5rem;
+      }
+      h2.section-subheading {
+        font-size: 1.2rem;
+      }
+      header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+      }
+      header nav {
+        display: flex;
+        gap: 20px;
+      }
+      header nav span {
+        font-size: 0.9rem;
+        cursor: pointer;
+        color: #555;
+      }
+      header button.cta {
+        border: 1.5px solid #555;
+        background: none;
+        padding: 6px 15px;
+        border-radius: 20px;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+      /* Hero Section */
+      .hero {
+        display: flex;
+        gap: 15px;
+        background: #ddd;
+        padding: 20px;
+        border-radius: 10px;
+        margin-bottom: 40px;
+      }
+      .hero-left {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      .hero-left h1 {
+        font-size: 2.2rem;
+        margin: 0 0 8px 0;
+      }
+      .hero-left p {
+        font-size: 0.9rem;
+        color: #333;
+        margin: 0 0 12px 0;
+      }
+      .hero-left .btn-group {
+        display: flex;
+        gap: 10px;
+      }
+      .hero-left button {
+        padding: 8px 18px;
+        border-radius: 20px;
+        border: none;
+        cursor: pointer;
+        font-weight: 600;
+      }
+      .btn-black {
+        background: #000;
+        color: #fff;
+      }
+      .btn-white {
+        background: #fff;
+        border: 1.5px solid #000;
+        color: #000;
+      }
+      .hero-right {
+        flex: 1;
+        position: relative;
+      }
+      .hero-right .big-rect {
+        width: 100%;
+        height: 200px;
+        background: #aaa;
+        border-radius: 10px;
+        position: relative;
+      }
+      .hero-right .small-rect {
+        width: 60px;
+        height: 80px;
+        background: #888;
+        border-radius: 8px;
+        position: absolute;
+        top: 20px;
+        right: 10px;
+      }
+      .hero-right .small-square {
+        width: 60px;
+        height: 60px;
+        background: #999;
+        border-radius: 8px;
+        position: absolute;
+        top: 120px;
+        right: 30px;
+      }
+
+      /* Section 1 - Services */
+      .services {
+        text-align: center;
+        margin-bottom: 40px;
+      }
+      .services p {
+        font-size: 0.85rem;
+        color: #555;
+        max-width: 550px;
+        margin: 8px auto 25px auto;
+      }
+      .services-list {
+        display: flex;
+        justify-content: center;
+        gap: 25px;
+      }
+      .service-item {
+        background: #ccc;
+        border-radius: 12px;
+        width: 90px;
+        height: 90px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding-bottom: 8px;
+        color: #222;
+        font-weight: 600;
+        font-size: 0.85rem;
+      }
+      .service-item > div {
+        flex: 1;
+        background: #bbb;
+        border-radius: 50%;
+        margin-bottom: 6px;
+      }
+
+      /* Section 2 - subsections */
+      .subsection {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        margin-bottom: 40px;
+      }
+      .subsection-left {
+        flex: 1;
+      }
+      .subsection-left h2 {
+        margin-bottom: 12px;
+      }
+      .subsection-left ul {
+        list-style: disc inside;
+        color: #444;
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+        padding-left: 14px;
+      }
+      .subsection-left button {
+        border: none;
+        padding: 7px 18px;
+        border-radius: 20px;
+        background: #bbb;
+        cursor: pointer;
+        font-weight: 600;
+        font-size: 0.9rem;
+      }
+      .subsection-right {
+        flex: 1;
+        background: #ccc;
+        height: 130px;
+        border-radius: 10px;
+        position: relative;
+      }
+      .color-legend {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+        background: #eee;
+        border-radius: 6px;
+        padding: 8px 12px;
+        font-size: 0.75rem;
+        color: #555;
+      }
+      .color-legend div {
+        margin-bottom: 6px;
+      }
+      .color-legend div span {
+        display: inline-block;
+        width: 12px;
+        height: 12px;
+        margin-right: 8px;
+        border-radius: 50%;
+        vertical-align: middle;
+      }
+      .color1 {
+        background: #a0a0a0;
+      }
+      .color2 {
+        background: #888;
+      }
+      .color3 {
+        background: #666;
+      }
+
+      /* Section 3 - Cards */
+      .card-section {
+        margin-bottom: 40px;
+        text-align: center;
+      }
+      .card-section p {
+        font-size: 0.85rem;
+        color: #555;
+        margin-bottom: 25px;
+        max-width: 550px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .cards-row {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+      }
+      .card {
+        background: #bbb;
+        width: 120px;
+        height: 160px;
+        border-radius: 12px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 10px;
+        font-weight: 700;
+        color: #333;
+        font-size: 0.85rem;
+      }
+
+      /* Section 4 - Testimonials */
+      .testimonial-section {
+        margin-bottom: 40px;
+      }
+      .testimonial-section p {
+        font-size: 0.85rem;
+        color: #555;
+        max-width: 650px;
+        margin: 8px 0 25px 0;
+      }
+      .testimonials-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 15px;
+      }
+      .testimonial {
+        background: #ddd;
+        border-radius: 12px;
+        flex: 1;
+        padding: 15px 15px 20px;
+      }
+      .testimonial .client-name {
+        font-weight: 700;
+        color: #333;
+        margin-bottom: 8px;
+      }
+      .testimonial .client-photo {
+        width: 30px;
+        height: 30px;
+        background: #aaa;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+      .testimonial p {
+        font-size: 0.8rem;
+        color: #555;
+      }
+
+      /* Footer Section */
+      footer {
+        background: #bbb;
+        border-radius: 10px;
+        padding: 20px 25px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      footer div {
+        font-weight: 700;
+        font-size: 1.1rem;
+        color: #222;
+      }
+      footer button {
+        border: none;
+        background: #999;
+        color: #fff;
+        border-radius: 18px;
+        padding: 8px 18px;
+        cursor: pointer;
+      }
+
+      /* "Before" title above container */
+      .before-title {
+        text-align: center;
+        font-weight: 900;
+        color: #666;
+        font-size: 2rem;
+        margin-bottom: 25px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="before-title">BEFORE</div>
+
+    <div class="container">
+      <header>
+        <span>LOGO</span>
+        <nav>
+          <span>Item1</span>
+          <span>Item2</span>
+          <span>Item3</span>
+          <span>Item4</span>
+        </nav>
+        <button class="cta">CTA</button>
+      </header>
+
+      <section class="hero">
+        <div class="hero-left">
+          <h1>Title Heading</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore.
+          </p>
+          <div class="btn-group">
+            <button class="btn-black">Button</button>
+            <button class="btn-white">Button</button>
+          </div>
+        </div>
+        <div class="hero-right">
+          <div class="big-rect"></div>
+          <div class="small-rect"></div>
+          <div class="small-square"></div>
+        </div>
+      </section>
+
+      <section class="services">
+        <h1 class="section-heading">Section Heading</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore.
+        </p>
+        <div class="services-list">
+          <div class="service-item">
+            <div></div>
+            Service Name
+          </div>
+          <div class="service-item">
+            <div></div>
+            Service Name
+          </div>
+          <div class="service-item">
+            <div></div>
+            Service Name
+          </div>
+          <div class="service-item">
+            <div></div>
+            Service Name
+          </div>
+          <div class="service-item">
+            <div></div>
+            Service Name
+          </div>
+        </div>
+      </section>
+
+      <section class="subsection">
+        <div class="subsection-left">
+          <h2 class="section-subheading">Section sub Heading</h2>
+          <ul>
+            <li>Lorem ipsum dolor sit amet, consectetur.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur.</li>
+            <li>Lorem ipsum dolor sit amet, consectetur.</li>
+          </ul>
+          <button>Button</button>
+        </div>
+        <div class="subsection-right">
+          <div class="color-legend">
+            <div><span class="color1"></span>Title</div>
+            <div><span class="color2"></span>Title</div>
+            <div><span class="color3"></span>Title</div>
+          </div>
+        </div>
+      </section>
+
+      <section class="card-section">
+        <h1 class="section-heading">Section Heading</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore.
+        </p>
+        <div class="cards-row">
+          <div class="card">Title</div>
+          <div class="card">Title</div>
+          <div class="card">Title</div>
+          <div class="card">Title</div>
+        </div>
+      </section>
+
+      <section class="testimonial-section">
+        <h1 class="section-heading">Section Heading</h1>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore.
+        </p>
+        <div class="testimonials-row">
+          <div class="testimonial">
+            <div class="client-photo"></div>
+            <div class="client-name">Nombre del cliente</div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore.
+            </p>
+          </div>
+          <div class="testimonial">
+            <div class="client-photo"></div>
+            <div class="client-name">Nombre del cliente</div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore.
+            </p>
+          </div>
+          <div class="testimonial">
+            <div class="client-photo"></div>
+            <div class="client-name">Nombre del cliente</div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore.
+            </p>
+          </div>
+          <div class="testimonial">
+            <div class="client-photo"></div>
+            <div class="client-name">Nombre del cliente</div>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+              eiusmod tempor incididunt ut labore.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <footer>
+        <div>
+          <strong>Heading</strong><br />
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore.
+        </div>
+        <button>Button</button>
+      </footer>
+    </div>
+  </body>
+</html>

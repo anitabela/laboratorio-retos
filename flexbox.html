@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>CSS Flexbox - Ejemplos</title>
+    <link rel="stylesheet" href="flexbox.css" />
+  </head>
+  <body>
+    <main class="container">
+      <h1>CSS Flexbox — Ejemplos</h1>
+
+      <section>
+        <h2>flex-direction</h2>
+        <div class="examples grid">
+          <div class="example">
+            <div class="demo row">
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+            </div>
+            <div class="label">row</div>
+          </div>
+
+          <div class="example">
+            <div class="demo column">
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+            </div>
+            <div class="label">column</div>
+          </div>
+
+          <div class="example">
+            <div class="demo row-reverse">
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+            </div>
+            <div class="label">row-reverse</div>
+          </div>
+
+          <div class="example">
+            <div class="demo column-reverse">
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+            </div>
+            <div class="label">column-reverse</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>align-items</h2>
+        <div class="examples grid">
+          <div class="example">
+            <div class="demo align flex-start">
+              <div class="item tall"></div>
+              <div class="item"></div>
+              <div class="item short"></div>
+            </div>
+            <div class="label">flex-start</div>
+          </div>
+
+          <div class="example">
+            <div class="demo align center">
+              <div class="item tall"></div>
+              <div class="item"></div>
+              <div class="item short"></div>
+            </div>
+            <div class="label">center</div>
+          </div>
+
+          <div class="example">
+            <div class="demo align flex-end">
+              <div class="item tall"></div>
+              <div class="item"></div>
+              <div class="item short"></div>
+            </div>
+            <div class="label">flex-end</div>
+          </div>
+
+          <div class="example">
+            <div class="demo align stretch">
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+            </div>
+            <div class="label">stretch</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>justify-content</h2>
+        <div class="examples grid">
+          <div class="example">
+            <div class="demo justify flex-start">
+              <div class="item tall"></div>
+              <div class="item"></div>
+              <div class="item short"></div>
+            </div>
+            <div class="label">flex-start</div>
+          </div>
+
+          <div class="example">
+            <div class="demo justify center">
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+            </div>
+            <div class="label">center</div>
+          </div>
+
+          <div class="example">
+            <div class="demo justify flex-end">
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+            </div>
+            <div class="label">flex-end</div>
+          </div>
+
+          <div class="example">
+            <div class="demo justify space-between">
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+            </div>
+            <div class="label">space-between</div>
+          </div>
+
+          <div class="example">
+            <div class="demo justify space-around">
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+            </div>
+            <div class="label">space-around</div>
+          </div>
+
+          <div class="example">
+            <div class="demo justify space-evenly">
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+            </div>
+            <div class="label">space-evenly</div>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>align-content (multi-line)</h2>
+        <div class="examples grid">
+          <div class="example">
+            <div class="demo wrap align-content flex-start multi">
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+            </div>
+            <div class="label">flex-start</div>
+          </div>
+
+          <div class="example">
+            <div class="demo wrap align-content center multi">
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+            </div>
+            <div class="label">center</div>
+          </div>
+
+          <div class="example">
+            <div class="demo wrap align-content flex-end multi">
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+            </div>
+            <div class="label">flex-end</div>
+          </div>
+
+          <div class="example">
+            <div class="demo wrap align-content space-between multi">
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+            </div>
+            <div class="label">space-between</div>
+          </div>
+
+          <div class="example">
+            <div class="demo wrap align-content space-around multi">
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+            </div>
+            <div class="label">space-around</div>
+          </div>
+
+          <div class="example">
+            <div class="demo wrap align-content stretch multi">
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+              <div class="item"></div>
+            </div>
+            <div class="label">stretch</div>
+          </div>
+        </div>
+      </section>
+
+      <footer class="foot">Guía rápida de Flexbox — ejemplos visuales</footer>
+    </main>
+  </body>
+</html>

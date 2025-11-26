@@ -1,0 +1,188 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root {
+  --bg: #fafafa;
+  --card: #fff;
+  --muted: #8a8a8a;
+  --accent: #e63a5a;
+}
+body {
+  font-family: Inter, system-ui, Arial;
+  background: var(--bg);
+  padding: 28px;
+  display: flex;
+  justify-content: center;
+}
+.container {
+  width: 100%;
+  max-width: 1100px;
+  background: var(--card);
+  border-radius: 10px;
+  padding: 20px 26px;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.06);
+}
+h1 {
+  text-align: center;
+  margin-bottom: 14px;
+}
+h2 {
+  font-size: 16px;
+  margin: 18px 0 10px;
+  color: #333;
+}
+
+/* layout of examples */
+.examples.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 14px;
+}
+
+/* each example card */
+.example {
+  background: #fff;
+  border: 1px solid #efefef;
+  padding: 12px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+.label {
+  font-size: 13px;
+  color: var(--muted);
+}
+
+/* demo area */
+.demo {
+  width: 100%;
+  height: 86px;
+  background: #fafafa;
+  border-radius: 6px;
+  padding: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 8px;
+  border: 1px dashed #eee;
+}
+
+/* items */
+.item {
+  width: 34px;
+  height: 34px;
+  background: var(--accent);
+  border-radius: 6px;
+  flex: 0 0 auto;
+}
+.item.tall {
+  height: 56px;
+}
+.item.short {
+  height: 22px;
+}
+
+/* flex-direction variants */
+.row {
+  flex-direction: row;
+}
+.column {
+  flex-direction: column;
+  align-items: flex-start;
+}
+.row-reverse {
+  flex-direction: row-reverse;
+}
+.column-reverse {
+  flex-direction: column-reverse;
+}
+
+/* align-items variants - applied via .align and modifier */
+.align.flex-start {
+  align-items: flex-start;
+}
+.align.center {
+  align-items: center;
+}
+.align.flex-end {
+  align-items: flex-end;
+}
+.align.stretch {
+  align-items: stretch;
+}
+.align .item {
+  height: 34px;
+}
+
+/* justify-content variants */
+.justify.flex-start {
+  justify-content: flex-start;
+}
+.justify.center {
+  justify-content: center;
+}
+.justify.flex-end {
+  justify-content: flex-end;
+}
+.justify.space-between {
+  justify-content: space-between;
+}
+.justify.space-around {
+  justify-content: space-around;
+}
+.justify.space-evenly {
+  justify-content: space-evenly;
+}
+
+/* multi-line examples for align-content */
+.wrap {
+  flex-wrap: wrap;
+  align-content: flex-start;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 120px;
+}
+.multi .item {
+  margin: 4px;
+}
+.align-content.flex-start {
+  align-content: flex-start;
+}
+.align-content.center {
+  align-content: center;
+}
+.align-content.flex-end {
+  align-content: flex-end;
+}
+.align-content.space-between {
+  align-content: space-between;
+}
+.align-content.space-around {
+  align-content: space-around;
+}
+.align-content.stretch {
+  align-content: stretch;
+}
+
+/* small visual tweaks */
+.foot {
+  text-align: center;
+  margin-top: 18px;
+  color: var(--muted);
+  font-size: 13px;
+}
+@media (max-width: 520px) {
+  .demo {
+    height: 100px;
+    padding: 6px;
+  }
+  .item {
+    width: 28px;
+    height: 28px;
+  }
+}

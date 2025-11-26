@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Wireframe Layout</title>
+    <style>
+      /* Reset y estilos básicos */
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        background-color: #f2f3ea;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        color: #000;
+        font-size: 12px;
+      }
+      .container {
+        max-width: 900px;
+        margin: 20px auto;
+        background-color: #fff;
+      }
+
+      /* Sección 1 - CTA principal */
+      .section-cta {
+        background-color: #d7d7d7;
+        padding: 40px 30px;
+      }
+      .brand-name {
+        font-weight: 700;
+        font-size: 10px;
+        margin-bottom: 6px;
+        letter-spacing: 0.05em;
+      }
+      .main-cta-title {
+        font-weight: 900;
+        font-size: 22px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+      .btn-cta-main {
+        background: #fff;
+        color: #000;
+        border: none;
+        padding: 8px 15px;
+        cursor: pointer;
+        font-size: 10px;
+        letter-spacing: 0.05em;
+        border-radius: 2px;
+        text-transform: uppercase;
+        width: 70px;
+      }
+
+      /* Separadores blancos */
+      .divider-white {
+        height: 20px;
+        background-color: #fdfdfd;
+      }
+
+      /* Sección 2 - Productos principales */
+      .section-products-main {
+        background-color: #d7d7d7;
+        padding: 15px 30px 30px 30px;
+      }
+      .section-products-main .section-title {
+        font-weight: 700;
+        font-size: 10px;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+      }
+      .section-products-main .section-desc {
+        font-size: 10px;
+        line-height: 1.2;
+        margin-bottom: 20px;
+        max-width: 700px;
+      }
+
+      .product-list-main {
+        display: flex;
+        gap: 10px;
+        flex-wrap: nowrap;
+      }
+      .product-item-main {
+        background-color: #fff;
+        flex: 1 1 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-width: 90px;
+        border-radius: 2px;
+        overflow: hidden;
+      }
+      .product-image-main {
+        background-color: #fff;
+        width: 100%;
+        height: 85px;
+      }
+      .product-title-main {
+        background-color: #bcbcbc;
+        width: 100%;
+        font-size: 9px;
+        text-transform: uppercase;
+        font-weight: 700;
+        text-align: center;
+        padding: 7px 0;
+      }
+
+      /* Sección 3 - Producto con beneficio */
+      .section-product-benefit {
+        background-color: #d7d7d7;
+        padding: 30px 30px 30px 30px;
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        flex-wrap: nowrap;
+      }
+      .product-big {
+        background-color: #fff;
+        flex: 3 1 0;
+        height: 85px;
+        border-radius: 2px;
+      }
+      .product-benefit-text {
+        background-color: #efefef;
+        flex: 1 1 0;
+        font-size: 10px;
+        padding: 8px 8px 4px;
+        line-height: 1.2;
+        border-radius: 2px;
+      }
+      .product-benefit-text strong {
+        font-weight: 700;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 4px;
+      }
+      .product-mid {
+        background-color: #fff;
+        height: 85px;
+        flex: 3 1 0;
+        border-radius: 2px;
+      }
+      .product-benefit-right {
+        background-color: #efefef;
+        height: 85px;
+        flex: 1 1 0;
+        font-size: 10px;
+        padding: 8px 8px 4px;
+        line-height: 1.2;
+        border-radius: 2px;
+      }
+      .product-benefit-right strong {
+        font-weight: 700;
+        text-transform: uppercase;
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      /* Sección 4 - Reseñas producto */
+      .section-product-review {
+        background-color: #fff;
+        padding: 40px 30px 30px 30px;
+        text-align: center;
+      }
+      .section-product-review h2 {
+        font-weight: 900;
+        font-size: 14px;
+        margin-bottom: 6px;
+        text-transform: uppercase;
+      }
+      .section-product-review p {
+        font-size: 10px;
+        margin-bottom: 20px;
+        line-height: 1.2;
+        max-width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      .review-list {
+        display: flex;
+        gap: 12px;
+        justify-content: center;
+        flex-wrap: nowrap;
+      }
+      .review-item {
+        background-color: #d7d7d7;
+        flex: 1 1 0;
+        max-width: 180px;
+        padding: 20px 10px;
+        border-radius: 2px;
+        font-size: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .review-avatar {
+        width: 40px;
+        height: 40px;
+        background-color: #fff;
+        border-radius: 50%;
+        margin-bottom: 10px;
+      }
+      .review-title {
+        font-weight: 700;
+        text-transform: uppercase;
+        margin-bottom: 6px;
+      }
+      .review-text {
+        font-size: 10px;
+        line-height: 1.2;
+        text-align: center;
+      }
+
+      /* Sección 5 - Unique selling point footer */
+      .section-footer-unique {
+        background-color: #d7d7d7;
+        padding: 25px 30px;
+        font-weight: 700;
+        font-size: 12px;
+        text-transform: uppercase;
+      }
+
+      /* Sección 6 - Promociones */
+      .section-sale-promo {
+        display: flex;
+        gap: 10px;
+        padding: 20px 30px 0 30px;
+        margin-bottom: 50px;
+      }
+      .sale-block {
+        background-color: #d7d7d7;
+        flex: 1 1 0;
+        min-height: 160px;
+        border-radius: 2px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        padding: 10px;
+        color: #000;
+        font-size: 10px;
+        font-weight: 700;
+        text-transform: uppercase;
+      }
+      .sale-cta {
+        margin-top: 6px;
+        background-color: #fff;
+        color: #000;
+        border: none;
+        padding: 6px 15px;
+        font-size: 10px;
+        cursor: pointer;
+        border-radius: 2px;
+        width: 70px;
+        text-align: center;
+      }
+
+      /* Sección Redes Sociales - base */
+      .section-social {
+        display: flex;
+        background-color: #9b9b9b;
+      }
+      .social-left {
+        background-color: #d7d7d7;
+        min-width: 230px;
+        padding: 10px 15px;
+        font-size: 8px;
+        font-weight: 700;
+        text-transform: uppercase;
+        color: #000;
+        display: flex;
+        flex-direction: column;
+        gap: 8px;
+      }
+      .social-left .btn-social {
+        background-color: #fff;
+        color: #000;
+        border: none;
+        padding: 5px 10px;
+        font-size: 10px;
+        cursor: pointer;
+        border-radius: 2px;
+        width: 70px;
+        text-align: center;
+      }
+      .social-right {
+        flex: 1 1 0;
+      }
+
+      /* Media queries para responsividad (opcional) */
+      @media (max-width: 768px) {
+        .product-list-main,
+        .section-product-benefit,
+        .review-list,
+        .section-sale-promo {
+          flex-wrap: wrap;
+        }
+        .product-item-main,
+        .product-benefit-text,
+        .product-benefit-right,
+        .review-item,
+        .sale-block {
+          flex: 1 1 45%;
+          max-width: 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <!-- SECCIÓN 1: CTA principal -->
+      <section class="section-cta">
+        <div class="brand-name">BRAND NAME</div>
+        <h1 class="main-cta-title">
+          CALL TO ACTION / UNIQUE<br />
+          SELLING POINT
+        </h1>
+        <button class="btn-cta-main">CTA</button>
+      </section>
+
+      <div class="divider-white"></div>
+
+      <!-- SECCIÓN 2: Productos principales -->
+      <section class="section-products-main">
+        <div class="section-title">SECTION TITLE</div>
+        <p class="section-desc">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+          sollicitudin lacus tempor, Nullam vitae diam quam convallis metus.
+          Pellentesque metus lacus, sodales id nec ante ac, molestie molestie
+          justo. Aenean ac ex sit amet libero mollis quis sit amet. Donec
+          tincidunt mollis et magna ultricies posuere. Donec in leo felis. Sed
+          fermentum justo sit amet urna porttitor maximus.
+        </p>
+        <div class="product-list-main">
+          <div class="product-item-main">
+            <div class="product-image-main"></div>
+            <div class="product-title-main">PRODUCT TITLE<br />INFO</div>
+          </div>
+          <div class="product-item-main">
+            <div class="product-image-main"></div>
+            <div class="product-title-main">PRODUCT TITLE<br />INFO</div>
+          </div>
+          <div class="product-item-main">
+            <div class="product-image-main"></div>
+            <div class="product-title-main">PRODUCT TITLE</div>
+          </div>
+          <div class="product-item-main">
+            <div class="product-image-main"></div>
+            <div class="product-title-main">PRODUCT TITLE</div>
+          </div>
+          <div class="product-item-main">
+            <div class="product-image-main"></div>
+            <div class="product-title-main">PRODUCT TITLE<br />INFO</div>
+          </div>
+        </div>
+      </section>
+
+      <div class="divider-white"></div>
+
+      <!-- SECCIÓN 3: Producto con beneficio -->
+      <section class="section-product-benefit">
+        <div class="product-big"></div>
+        <div class="product-benefit-text">
+          <strong>PRODUCT BENEFIT</strong>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+          sollicitudin lacus tempor. Nullam vitae ex quam turpis consequat
+          molestie.
+        </div>
+        <div class="product-mid"></div>
+        <div class="product-benefit-right">
+          <strong>PRODUCT BENEFIT</strong>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+          sollicitudin lacus tempor. Nullam vitae ex quam turpis consequat
+          molestie.
+        </div>
+      </section>
+
+      <!-- SECCIÓN 4: Review productos -->
+      <section class="section-product-review">
+        <h2>PRODUCT REVIEW SECTION</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+          porttitor lacus tempor, Nullam vitae diam congue tulus consequat
+          molestie.
+        </p>
+        <div class="review-list">
+          <div class="review-item">
+            <div class="review-avatar"></div>
+            <div class="review-title">MAIN POINT</div>
+            <div class="review-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+              sollicitudin lacus tempor, Nullam vitae diam congue tulus
+              consequat molestie.
+            </div>
+          </div>
+          <div class="review-item">
+            <div class="review-avatar"></div>
+            <div class="review-title">MAIN POINT</div>
+            <div class="review-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+              sollicitudin lacus tempor, Nullam vitae diam congue tulus
+              consequat molestie.
+            </div>
+          </div>
+          <div class="review-item">
+            <div class="review-avatar"></div>
+            <div class="review-title">MAIN POINT</div>
+            <div class="review-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+              sollicitudin lacus tempor, Nullam vitae diam congue tulus
+              consequat molestie.
+            </div>
+          </div>
+          <div class="review-item">
+            <div class="review-avatar"></div>
+            <div class="review-title">MAIN POINT</div>
+            <div class="review-text">
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
+              sollicitudin lacus tempor, Nullam vitae diam congue tulus
+              consequat molestie.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 5: Unique selling point footer -->
+      <section class="section-footer-unique">UNIQUE SELLING POINT</section>
+
+      <!-- SECCIÓN 6: Promociones -->
+      <section class="section-sale-promo">
+        <div class="sale-block">
+          SALE / PROMOTION
+          <button class="sale-cta">CTA</button>
+        </div>
+        <div class="sale-block">
+          SALE / PROMOTION
+          <button class="sale-cta">CTA</button>
+        </div>
+      </section>
+
+      <!-- SECCIÓN 7: Redes Sociales -->
+      <section class="section-social">
+        <div class="social-left">
+          #FOLLOW US ON INSTAGRAM
+          <button class="btn-social">CTA</button>
+        </div>
+        <div class="social-right"></div>
+      </section>
+    </div>
+  </body>
+</html>
